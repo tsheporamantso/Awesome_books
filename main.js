@@ -65,10 +65,10 @@ class store {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook(authore) {
+  static removeBook(author) {
     const books = store.getBooks();
     books.forEach((book, index) => {
-      if (book.authore === authore) {
+      if (book.author === author) {
         books.splice(index, 1);
       }
     });
@@ -85,10 +85,10 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   // Prevent actual submit
   e.preventDefault();
   const title = document.querySelector('#title').value;
-  const authore = document.querySelector('#author').value;
+  const author = document.querySelector('#author').value;
 
   // Instatiate book
-  const book = new Book(title, authore);
+  const book = new Book(title, author);
 
   // Add book data to screen
   UI.addBookToList(book);
