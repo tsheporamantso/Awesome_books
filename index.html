@@ -1,70 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer type="module"></script>
-    <title>Awesome Books Title Page</title>
-</head>
-<body>
-    <!-- **
-        * ! -------------- Header and navigation bar section -------------------
-        ** -->
-    <header>
-        <nav class="navbar">
-            <h1 class="nav__branding">Awesome Books</h1>
-            <ul class="nav__items">
-                <li class="nav__links" id="list">List</li>
-                <li class="nav__links" id="add">Add New</li>
-                <li class="nav__links" id="cont">Contact</li>
-            </ul>
-        </nav>
-    </header>
+    <script src="./modules/menu.js"></script>    <title>Awesome Books Title Page</title>
+  </head>
+  <header>
+    <nav>
 
-    <div class="time">
-        <div class="container">
-            <p class="date" id="timeText"></p>
-        </div>
+    </nav>
+</header>
+<main class="container">
+    <div class="content">
+        <article class="list-container">
+            <div class="title-container">
+                <h1 class="title-bar">Awesome books</h1>
+            </div>
+            <div class="book-list"></div>
+        </article><br><br>
+        <article class="new-book-container">
+            <form action="" class="add-form">
+                <input type="text" class="title" placeholder="Title" required><br>
+                <input type="text" class="author" placeholder="Author" required><br>
+                <input type="submit" class="add-btn" value="Add">
+            </form>
+        </article>
     </div>
-     <!-- **
-        * ! -------------- Display Books Section Here -------------------
-        ** -->
-    <section id="display__list">
-        <h2>All Awesome Books</h2>
-        <div id="data" class="data"></div>
-    </section>
-
-    <section id="input__data" class="input__data">
-        <form action="#" id="form">
-            <h class="input__title">Add a new book</h>
-            <label for="title">
-                <input type="text" id="title" placeholder="Title" required>
-            </label>
-            <label for="author">
-                <input type="text" id="author" placeholder="Author" required>
-            </label>
-            <input type="submit" id="submit" value="Add" class="submit">
-        </form>
-    </section>
-
-    <section id="contact">
-        <div class="contact__text">
-            <h2 class="contact__header">Contact Information</h2>
-            <p class="contact__description">For any questions or greetings,<br> You can reach out to us!</p>
-            <ul class="contact__info">
-                <li class="email">
-                    email:
-                    <a href="#">tshepo.ramantso@outlook.com or dcompte223@gmail.com</a>
-                </li>
-                <li class="tel">Tel no: +27119868920</li>
-                <li class="address">Our Address: Johannesburg, South Africa</li>
-            </ul>
-        </div>
-    </section>
-    <footer class="footer">
-        <p class="footer__description">Copyright All rights reserved</p>
-    </footer>
+</main>
 </body>
 </html>
