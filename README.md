@@ -29,10 +29,10 @@ After you're finished please remove all the comments and instructions!
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
   <!-- <img src="murple_logo.png" alt="logo" width="140"  height="auto" /> -->
-  <h1>Gladwin Tshepo Ramantso<h1>
+  <h1>Gladwin Tshepo Ramantso And Drissa Toure<h1>
   <br/>
   
-  <h3><b>Personal Portfolio</b></h3>
+  <h3><b>Awesome Books</b></h3>
 
 </div>
 
@@ -62,16 +62,17 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Personal Portfolio <a name="about-project"></a>
+# 📖 Awesome Books <a name="about-project"></a>
 
-This project is about my personal portfolio based on figma design provided by Microverse.    
+This Awesome books project is based on an online website that allows users to add/remove books and their authors from a list of books or to form a library of books which are stored in a local storage.    
 
-**Personal Portfolio** is a mobile version personal portfolio with a synopsis about myself and projects worked on.
+**Awesome Books** In this project, we will built a basic website that allows users to add/remove books from a list. We achieved that by using JavaScript objects and arrays. We also dynamically modified the DOM and added basic events
 
 ## 🛠 Built With <a name="built-with"></a>
 
 - HTML
 - CSS
+- JavaScript
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -100,9 +101,9 @@ This project is about my personal portfolio based on figma design provided by Mi
 
 ### Key Features <a name="key-features"></a>
 
-- **Linters Setup**
-- **Display text and background image**
-- **Display links to my social media accounts**
+- **JavaScript with Objects**
+- **Local Storage**
+- **Basic UI with plain HTML**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,7 +111,7 @@ This project is about my personal portfolio based on figma design provided by Mi
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo](https://tsheporamantso.github.io/Portfolio/)
+- [Live Demo]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +149,7 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:tsheporamantso/portfolio.git
+  git clone git@github.com:tsheporamantso/Awesome_Books.git
 ```
 
 
@@ -206,7 +207,7 @@ GitHub Pages
 Example: 
 
 ```sh
-https://tsheporamantso.github.io/portfolio/
+https://tsheporamantso.github.io/Awesome_Books/
 ```
 
 
@@ -228,29 +229,17 @@ https://tsheporamantso.github.io/portfolio/
 - Twitter: [@mercymugambi15](https://twitter.com/MercyMugambi15)
 - LinkedIn: [@mercymugambi](https://www.linkedin.com/in/mercymugambi/)
 
-👤 **Lawrence Amoafo**
-
-- GitHub: [@Kwaku28](https://github.com/Kwaku28)
-- Twitter: [@kwakuamoafo](https://twitter.com/kwakuamoafo)
-- LinkedIn: [@lawrenceamoafo](https://www.linkedin.com/in/lawrenceamoafo)
-
-👤 **Amarachi Dimkpa**
-
-- GitHub: [@amazinggacee](https://github.com/Amazinggracee)
-- Twitter: [@amazinggaceu](https://twitter.com/amazinggraceu)
-- LinkedIn: [Amarachi Dimkpa](https://linkedin.com/in/amarachi-dimkpa-070643183)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-<!-- - [ ] **Contact form** -->
-<!-- - [ ] **Media Query for desktop screen** -->
-<!-- - [ ] **Transition and Animations** -->
-<!-- - [ ] **Web Accessibility** -->
-- [ ] **JavaScript functionality**
+- [ ] **Add CSS style to the application to make it match with the wireframe**
+- [ ] **Modidy the awesome books to have navigation bar book list Add books contact info**
+- [ ] **Create class methods to ass and remove books**
+<!-- - [ ] **Web Accessibility**
+- [ ] **JavaScript functionality** -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -260,7 +249,7 @@ https://tsheporamantso.github.io/portfolio/
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/tsheporamantso/portfolio/issues).
+Feel free to check the [issues page](https://github.com/tsheporamantso/Awesome_Books/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -268,9 +257,7 @@ Feel free to check the [issues page](https://github.com/tsheporamantso/portfolio
 
 ## ⭐️ Show your support <a name="support"></a>
 
-
-
-If you like this project please follow me on github & twitter and also connect on Linkedin.
+If you like this project please follow us on github & twitter and also connect on Linkedin.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -278,7 +265,7 @@ If you like this project please follow me on github & twitter and also connect o
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for this exercise. 
+I would like to thank Microverse for this exercise and the contribution by my coding partner.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
