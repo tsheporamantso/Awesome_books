@@ -223,11 +223,11 @@ https://tsheporamantso.github.io/Awesome_Books/
 - Twitter: [@ramgt001](https://twitter.com/ramgt001)
 - LinkedIn: [Tshepo Gladwin Ramantso](https://www.linkedin.com/in/tshepo-ramantso-b6a35433/)
 
-👤 **Mercy Mugambi**
+👤 **Drissa Toure**
 
-- GitHub: [@mercymugambi](https://github.com/mercymugambi)
-- Twitter: [@mercymugambi15](https://twitter.com/MercyMugambi15)
-- LinkedIn: [@mercymugambi](https://www.linkedin.com/in/mercymugambi/)
+- GitHub: [@touredri](https://github.com/touredri)
+- Twitter: [touredri](https://twitter.com/touredri)
+- LinkedIn: [touredri](https://www.linkedin.com/in/touredri/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
