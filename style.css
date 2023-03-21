@@ -17,8 +17,47 @@ li {
   list-style: none;
 }
 
-.new-book-container {
-  display: grid;
-  place-items: center;
-  height: auto;
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.book-list {
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.list-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+
+h3, 
+p, 
+.btn {
+  text-align: center;
+}
+
+.title {
+  padding: 10px;
+  width: 200px;
+}
+
+.author {
+  padding: 10px;
+  width: 200px;
+}
+
+
+

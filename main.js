@@ -36,7 +36,8 @@ const addBook = (book) => {
     <h3>${book.title}</h3>
     <p>${book.author}</p>
     <a href="#" class="btn btn-danger btn-sm remove">Remove</a>
-    <hr>
+
+
   `;
   list.appendChild(div);
 };
