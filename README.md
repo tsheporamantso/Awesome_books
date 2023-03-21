@@ -1,34 +1,8 @@
 
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
--->
-
 <div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <!-- <img src="murple_logo.png" alt="logo" width="140"  height="auto" /> -->
+
   <h1>Gladwin Tshepo Ramantso And Drissa Toure<h1>
   <br/>
   
@@ -57,7 +31,6 @@ After you're finished please remove all the comments and instructions!
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-<!-- - [❓ FAQ (OPTIONAL)](#faq) -->
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -89,13 +62,6 @@ This Awesome books project is based on an online website that allows users to ad
     <li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
   </ul>
 </details>
-
-<!-- <details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details> -->
 
 <!-- Features -->
 
@@ -130,13 +96,13 @@ In order to run this project you need:
 - Git bash.
 - GitHub Account.
 
-<!--
+
 Example command:
 
 ```sh
- gem install rails
+ gem install VS code
 ```
- -->
+
 
 ### Setup
 
@@ -238,8 +204,6 @@ https://tsheporamantso.github.io/Awesome_Books/
 - [ ] **Add CSS style to the application to make it match with the wireframe**
 - [ ] **Modidy the awesome books to have navigation bar book list Add books contact info**
 - [ ] **Create class methods to ass and remove books**
-<!-- - [ ] **Web Accessibility**
-- [ ] **JavaScript functionality** -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -268,21 +232,6 @@ If you like this project please follow us on github & twitter and also connect o
 I would like to thank Microverse for this exercise and the contribution by my coding partner.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-<!-- ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- LICENSE -->
 
