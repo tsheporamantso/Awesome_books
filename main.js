@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-unused-vars */
 // Array Constructor
 const booksObject = {};
 
@@ -75,7 +77,7 @@ formBook.addEventListener('submit', (e) => {
   // Create book object and add it to the UI and storage
   const book = {
     title: titleValue,
-    author: authorValue
+    author: authorValue,
   };
   addBook(book);
   addBookStr(book);
