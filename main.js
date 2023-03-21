@@ -1,9 +1,7 @@
 // Array Constructor
-
 const booksObject = {};
 
 // Storage Functions
-
 const getBooks = () => {
   let books;
   if (localStorage.getItem('books') === null) {
@@ -22,29 +20,23 @@ const addBookStr = (book) => {
 
 const deleteBookStr = (bookIndex) => {
   const books = getBooks();
-
-  books.forEach((book, index) => {
-    if (bookIndex === index) {
-      books.splice(index, 1);
-    }
-  });
+  books.splice(bookIndex, 1);
   localStorage.setItem('books', JSON.stringify(books));
 };
 
 // Array UI
-const books = getBooks();
+const list = document.querySelector('.book-list');
 
 const addBook = (book) => {
-  const list = document.querySelector('.book-list');
   const div = document.createElement('div');
   div.classList.add('list-container');
-  list.appendChild(div);
-
   div.innerHTML = `
-  <h3>${book.title}</h3>
-  <p>${book.author}</p>
-  <a href="" class="btn btn-danger btn-sm remove"> Remove </a>
-  <hr> `;
+    <h3>${book.title}</h3>
+    <p>${book.author}</p>
+    <a href="#" class="btn btn-danger btn-sm remove">Remove</a>
+    <hr>
+  `;
+  list.appendChild(div);
 };
 
 const title = document.querySelector('#title');
@@ -62,42 +54,45 @@ const deleteBookList = (element) => {
 };
 
 // Events: Display Books
-
+const books = getBooks();
 books.forEach((book) => addBook(book));
 
 // Event: add a book
-
 const formBook = document.querySelector('.new-book-container');
-
 formBook.addEventListener('submit', (e) => {
   e.preventDefault();
-  booksObject.title = title.value;
-  booksObject.author = author.value;
 
-  // validation and Alerts
-  if (title.value === '' || author.value === '') {
-    //
-  } else {
-    // add book to defined array
-    addBook(booksObject);
+  // Get input values
+  const titleValue = title.value;
+  const authorValue = author.value;
 
-    // add book to storage
-    addBookStr(booksObject);
-    // clear form
-    clearFormInputs();
+  // Validation
+  if (titleValue === '' || authorValue === '') {
+    alert('Please fill in all fields');
+    return;
   }
 
-  window.location.reload();
+  // Create book object and add it to the UI and storage
+  const book = {
+    title: titleValue,
+    author: authorValue
+  };
+  addBook(book);
+  addBookStr(book);
+
+  // Clear form inputs
+  clearFormInputs();
 });
 
-// remove a book
-
-const remove = document.querySelectorAll('.list-container');
-
-remove.forEach((deleteBook, index) => {
-  deleteBook.addEventListener('click', (e) => {
-    e.preventDefault();
-    deleteBookList(e.target);
-    deleteBookStr(index);
-  });
+// Event: remove a book
+list.addEventListener('click', (e) => {
+  e.preventDefault();
+  const removeButton = e.target.closest('.remove');
+  if (removeButton) {
+    const listContainer = removeButton.closest('.list-container');
+    const bookIndex = Array.from(list.children).indexOf(listContainer);
+    deleteBookList(listContainer);
+    deleteBookStr(bookIndex);
+    document.location.reload();
+  }
 });
