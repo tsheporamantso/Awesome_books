@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-unused-vars */
 // Array Constructor
-const booksObject = {};
+// const booksObject = {};
 
 // Storage Functions
 const getBooks = () => {
