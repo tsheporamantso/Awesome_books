@@ -29,17 +29,15 @@ class Book {
   }
 
   static displayBooks() {
-    const books = Storage.getBooks();
+    const books = Book.getBooks();
     books.forEach((book) => {
       const newBook = new Book(book.title, book.author);
       newBook.addBook();
     });
   }
-}
 
-class Storage {
   static addBook(book) {
-    const books = Storage.getBooks();
+    const books = Book.getBooks();
     books.push(book);
     localStorage.setItem('books', JSON.stringify(books));
   }
@@ -55,7 +53,7 @@ class Storage {
   }
 
   static deleteBook(bookIndex) {
-    const books = Storage.getBooks();
+    const books = Book.getBooks();
     books.splice(bookIndex, 1);
     localStorage.setItem('books', JSON.stringify(books));
   }
@@ -73,13 +71,13 @@ formBook.addEventListener('submit', (e) => {
 
   // Validation
   if (title === '' || author === '') {
-    alert('Please fill in all fields');
+    // alert('Please fill in all fields');
     return;
   }
 
   const newBook = new Book(title, author);
   newBook.addBook();
-  Storage.addBook(newBook);
+  Book.addBook(newBook);
 
   Book.clearFormInputs();
 });
@@ -92,7 +90,7 @@ document.querySelector('.book-list').addEventListener('click', (e) => {
     const listContainer = removeButton.closest('.list-container');
     const bookIndex = Array.from(document.querySelector('.book-list').children).indexOf(listContainer);
     Book.deleteBookList(listContainer);
-    Storage.deleteBook(bookIndex);
+    Book.deleteBook(bookIndex);
     document.location.reload();
   }
 });
