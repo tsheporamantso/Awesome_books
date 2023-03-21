@@ -1,100 +1,96 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-unused-vars */
-// Array Constructor
-// const booksObject = {};
-
-// Storage Functions
-const getBooks = () => {
-  let books;
-  if (localStorage.getItem('books') === null) {
-    books = [];
-  } else {
-    books = JSON.parse(localStorage.getItem('books'));
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
-  return books;
-};
 
-const addBookStr = (book) => {
-  const books = getBooks();
-  books.push(book);
-  localStorage.setItem('books', JSON.stringify(books));
-};
-
-const deleteBookStr = (bookIndex) => {
-  const books = getBooks();
-  books.splice(bookIndex, 1);
-  localStorage.setItem('books', JSON.stringify(books));
-};
-
-// Array UI
-const list = document.querySelector('.book-list');
-
-const addBook = (book) => {
-  const div = document.createElement('div');
-  div.classList.add('list-container');
-  div.innerHTML = `
-    <h3>${book.title}</h3>
-    <p>${book.author}</p>
-    <a href="#" class="btn btn-danger btn-sm remove">Remove</a>
-    <hr>
-  `;
-  list.appendChild(div);
-};
-
-const title = document.querySelector('#title');
-const author = document.querySelector('#author');
-
-const clearFormInputs = () => {
-  title.value = '';
-  author.value = '';
-};
-
-const deleteBookList = (element) => {
-  if (element.classList.contains('remove')) {
-    element.parentElement.remove();
+  addBook() {
+    const div = document.createElement('div');
+    div.classList.add('list');
+    div.innerHTML = `<div class="row">
+      <h3>"${this.title}"</h3> by
+      <p>${this.author}</p></div>
+      <a href="#" class="btn btn-danger btn-sm remove">Remove</a>
+    `;
+    document.querySelector('.book-list').appendChild(div);
   }
-};
 
-// Events: Display Books
-const books = getBooks();
-books.forEach((book) => addBook(book));
+  static deleteBookList(element) {
+    if (element.classList.contains('remove')) {
+      element.parentElement.remove();
+    }
+  }
 
-// Event: add a book
+  static clearFormInputs() {
+    const title = document.querySelector('#title');
+    const author = document.querySelector('#author');
+    title.value = '';
+    author.value = '';
+  }
+
+  static displayBooks() {
+    const books = Book.getBooks();
+    books.forEach((book) => {
+      const newBook = new Book(book.title, book.author);
+      newBook.addBook();
+    });
+  }
+
+  static addBook(book) {
+    const books = Book.getBooks();
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+    return books;
+  }
+
+  static deleteBook(bookIndex) {
+    const books = Book.getBooks();
+    books.splice(bookIndex, 1);
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+}
+
+// Event: Display Books
+document.addEventListener('DOMContentLoaded', Book.displayBooks);
+
+// Event: Add a Book
 const formBook = document.querySelector('.new-book-container');
 formBook.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  // Get input values
-  const titleValue = title.value;
-  const authorValue = author.value;
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
 
   // Validation
-  if (titleValue === '' || authorValue === '') {
-    alert('Please fill in all fields');
+  if (title === '' || author === '') {
+    // alert('Please fill in all fields');
     return;
   }
 
-  // Create book object and add it to the UI and storage
-  const book = {
-    title: titleValue,
-    author: authorValue,
-  };
-  addBook(book);
-  addBookStr(book);
+  const newBook = new Book(title, author);
+  newBook.addBook();
+  Book.addBook(newBook);
 
-  // Clear form inputs
-  clearFormInputs();
+  Book.clearFormInputs();
 });
 
-// Event: remove a book
-list.addEventListener('click', (e) => {
+// Event: Remove a Book
+document.querySelector('.book-list').addEventListener('click', (e) => {
   e.preventDefault();
   const removeButton = e.target.closest('.remove');
   if (removeButton) {
     const listContainer = removeButton.closest('.list-container');
-    const bookIndex = Array.from(list.children).indexOf(listContainer);
-    deleteBookList(listContainer);
-    deleteBookStr(bookIndex);
+    const bookIndex = Array.from(document.querySelector('.book-list').children).indexOf(listContainer);
+    Book.deleteBookList(listContainer);
+    Book.deleteBook(bookIndex);
     document.location.reload();
   }
 });
