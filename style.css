@@ -33,18 +33,16 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .list-container {
-display: flex;
-flex-direction: column;
-justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-h3, 
-p, 
+h3,
+p,
 .btn {
   text-align: center;
 }
@@ -78,4 +76,3 @@ p,
   display: flex;
   gap: 20px;
 }
-
