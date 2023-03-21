@@ -1,78 +1,103 @@
-/* eslint-disable no-use-before-define */
-// eslint-disable-next-line max-classes-per-file
-const listOfBooks = document.querySelector('.book-list');
+// Array Constructor
 
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-    this.bookid = Math.random().toFixed(1);
-  }
-}
+const booksObject = {};
 
-class StoreBook {
-  constructor() {
-    // Array of book items
-    this.BookData = [];
-  }
+// Storage Functions
 
-  // New books
-  addBook = (newbook) => {
-    this.BookData.push(newbook);
-    localStorage.setItem('AllBooks', JSON.stringify(this.BookData));
-    DisplayBooks(newbook);
-  };
-
-  // Remove book from the list
-  removeBook = (bookid) => {
-    const deleteBook = document.getElementById(bookid);
-    deleteBook.remove();
-    this.BookData = this.BookData.filter((x) => x.bookid !== bookid);
-    localStorage.setItem('AllBooks', JSON.stringify(this.BookData));
-  };
-}
-
-const savebook = new StoreBook();
-// Get input value
-const getformInput = () => {
-  const title = document.querySelector('.title');
-  const author = document.querySelector('.author');
-  const insertbook = new Book(title.value, author.value);
-  return insertbook;
-};
-
-// Display the list of books on the web page
-let DisplayBooks = (index) => {
-  let bgcolor = '';
-  if (savebook.BookData.indexOf(index) % 2 !== 0) {
-    bgcolor = '#fff';
+const getBooks = () => {
+  let books;
+  if (localStorage.getItem('books') === null) {
+    books = [];
   } else {
-    bgcolor = '#ff99';
+    books = JSON.parse(localStorage.getItem('books'));
   }
-  const newBook = document.createElement('div');
-  newBook.classList.add('book-item');
-  newBook.classList.add(bgcolor);
-  newBook.setAttribute('id', index.bookid); newBook.innerHTML = `
- <p>${index.title} <br> written by ${index.author}</p> <hr>`;
-  const removeBook = document.createElement('button');
-  removeBook.innerHTML = 'Remove';
-  removeBook.addEventListener('click', () => savebook.removeBook(index.bookid));
-  newBook.appendChild(removeBook);
-  listOfBooks.appendChild(newBook);
+  return books;
 };
 
-// Add Button
-const addnewBook = document.querySelector('.add-btn');
-addnewBook.addEventListener('click', () => {
-  const item = getformInput();
-  savebook.addBook(item);
+const addBookStr = (book) => {
+  const books = getBooks();
+  books.push(book);
+  localStorage.setItem('books', JSON.stringify(books));
+};
+
+const deleteBookStr = (bookIndex) => {
+  const books = getBooks();
+
+  books.forEach((book, index) => {
+    if (bookIndex === index) {
+      books.splice(index, 1);
+    }
+  });
+  localStorage.setItem('books', JSON.stringify(books));
+};
+
+// Array UI
+const books = getBooks();
+
+const addBook = (book) => {
+  const list = document.querySelector('.book-list');
+  const div = document.createElement('div');
+  div.classList.add('list-container');
+  list.appendChild(div);
+
+  div.innerHTML = `
+  <h3>${book.title}</h3>
+  <p>${book.author}</p>
+  <a href="" class="btn btn-danger btn-sm remove"> Remove </a>
+  <hr> `;
+};
+
+const title = document.querySelector('#title');
+const author = document.querySelector('#author');
+
+const clearFormInputs = () => {
+  title.value = '';
+  author.value = '';
+};
+
+const deleteBookList = (element) => {
+  if (element.classList.contains('remove')) {
+    element.parentElement.remove();
+  }
+};
+
+// Events: Display Books
+
+books.forEach((book) => addBook(book));
+
+// Event: add a book
+
+const formBook = document.querySelector('.new-book-container');
+
+formBook.addEventListener('submit', (e) => {
+  e.preventDefault();
+  booksObject.title = title.value;
+  booksObject.author = author.value;
+
+  // validation and Alerts
+  if (title.value === '' || author.value === '') {
+    //
+  } else {
+    // add book to defined array
+    addBook(booksObject);
+
+    // add book to storage
+    addBookStr(booksObject);
+    // clear form
+    clearFormInputs();
+  }
+
+  window.location.reload();
 });
 
-window.onload = () => {
-  savebook.BookData = JSON.parse(localStorage.getItem('AllBooks' || '[]'));
-  if (savebook.BookData === null) {
-    savebook.BookData = [];
-    return;
-  }
-  savebook.BookData.forEach((item) => DisplayBooks(item));
-};
+// remove a book
+
+const remove = document.querySelectorAll('.list-container');
+
+remove.forEach((deleteBook, index) => {
+  deleteBook.addEventListener('click', (e) => {
+    e.preventDefault();
+    deleteBookList(e.target);
+    deleteBookStr(index);
+  });
+});

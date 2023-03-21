@@ -20,4 +20,5 @@ li {
 .new-book-container {
   display: grid;
   place-items: center;
+  height: auto;
 }
