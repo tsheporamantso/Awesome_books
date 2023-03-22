@@ -47,6 +47,8 @@ li {
 .book-list {
   border: 1px solid black;
   margin: 20px;
+  height: 350px;
+  overflow: scroll;
 }
 
 .add-form {
@@ -104,7 +106,7 @@ p,
 .contact__info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
  
 }
 
@@ -116,7 +118,7 @@ p,
 .contact__info li {
   text-decoration: underline;
   list-style: inside;
-  margin-left: 80px;
+  /* margin-left: 80px; */
   font-size: 12px;
 }
 
@@ -126,5 +128,41 @@ p,
   margin: 20px 20px;
   padding: 10px;
   font-size: 12px;
-  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content, .new-book-container, .contact{
+  position: relative;
+}
+/* 
+.content {
+  display: none;
+} */
+
+.new-book-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.contact {
+    display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn {
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
 }
