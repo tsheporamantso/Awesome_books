@@ -8,16 +8,33 @@
     <script src="main.js" defer type="module"></script>
     <script src="./modules/menu.js"></script>    <title>Awesome Books Title Page</title>
   </head>
-  <header>
-    <nav>
 
+  <header class="header">
+    <nav class="navbar">
+        <a href="#" class="nav__branding">Awesome Books</a>
+        <ul class="nav__items">
+            <li id="home__li" class="nav__item__home">
+                <a href="#home">List</a>
+            </li>
+            <li id="add__book__li" class="nav__item__add__book">
+                <a href="#add__book">Add New</a>
+            </li>
+            <li id="contact__li" class="nav__item__contact">
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
     </nav>
 </header>
+
+<div class="time">
+    <p class="date"></p>
+</div>
+
 <main class="container">
     <div class="content">
         <article class="list-container">
             <div class="title-container">
-                <h1 class="title-bar">Awesome books</h1>
+                <h1 class="title-bar">All Awesome books</h1>
             </div>
             <div class="book-list"><hr></div>
             
@@ -30,6 +47,30 @@
             </form>
         </article>
     </div>
+
+    <section class="contact" id="contact">
+        <h2 class="contact__header">Contact Information</h2>
+        <p class="contact__text">Please reach us on the below detials:</p>
+        <ul class="contact__info">
+            <li>Gladwin</li>
+            <li>
+                <a href="https://github.com/tsheporamantso">mybio</a>
+            </li>
+            <li>Johannesburg, South Africa</li>
+        </ul>
+        <br>
+        <ul class="contact__info">
+            <li>Drissa</li>
+            <li>
+                <a href="https://github.com/touredri">mybio</a>
+            </li>
+            <li>Bamako, Mali</li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        <p class="footer__text">Copyright @copy 2023 Awesome Books</p>
+    </footer>
 </main>
 </body>
 </html>
