@@ -60,7 +60,7 @@ class Book {
 }
 
 const home = document.getElementById('home__li');
-const add__book = document.getElementById('add__book__li');
+const addBook = document.getElementById('add__book__li');
 const contact = document.getElementById('contact__li');
 
 home.addEventListener('click', () => {
@@ -69,7 +69,7 @@ home.addEventListener('click', () => {
   document.querySelector('#contact').style.display = 'none';
 });
 
-add__book.addEventListener('click', () => {
+addBook.addEventListener('click', () => {
   document.querySelector('#home').style.display = 'none';
   document.querySelector('.new-book-container').style.display = 'flex';
   document.querySelector('#contact').style.display = 'none';
@@ -127,4 +127,3 @@ function ondate() {
   document.querySelector('.date').innerHTML = Date();
 }
 ondate();
-
