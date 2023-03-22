@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-style: normal;
   font-weight: 700;
-  font-family: 'Poppins', sans-serif;
+  font-family: sans-serif;
 }
 
 a {
@@ -15,6 +15,11 @@ a {
 
 li {
   list-style: none;
+}
+
+.nav__branding {
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .navbar {
@@ -47,7 +52,7 @@ li {
 .book-list {
   border: 1px solid black;
   margin: 20px;
-  height: 350px;
+  height: 450px;
   overflow: scroll;
 }
 
@@ -106,26 +111,23 @@ p,
 .contact__info {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
- 
 }
 
 .contact__text {
-  margin-top: 15px;
-  font-size: 12px;
+  margin: 15px 0;
+  font-size: 15px;
+  text-align: left;
 }
 
 .contact__info li {
-  text-decoration: underline;
   list-style: inside;
-  /* margin-left: 80px; */
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .footer {
   display: flex;
   border: 1px solid black;
-  margin: 20px 20px;
+  margin: 0 20px;
   padding: 10px;
   font-size: 12px;
   position: absolute;
@@ -134,13 +136,11 @@ p,
   right: 0;
 }
 
-.content, .new-book-container, .contact{
+.content,
+.new-book-container,
+.contact {
   position: relative;
 }
-/* 
-.content {
-  display: none;
-} */
 
 .new-book-container {
   display: none;
@@ -149,8 +149,9 @@ p,
   justify-content: center;
   gap: 30px;
 }
+
 .contact {
-    display: none;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
