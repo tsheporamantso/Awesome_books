@@ -94,3 +94,12 @@ document.querySelector('.book-list').addEventListener('click', (e) => {
     document.location.reload();
   }
 });
+
+// Navigation section here
+
+document.write(new Date().getFullYear());
+
+function ondate() {
+  document.querySelector('.date').innerHTML = Date();
+}
+ondate();
